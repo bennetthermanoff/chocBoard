@@ -17,16 +17,16 @@ points:
               from: =colrow
               to: =column_net
             params:
-                keycaps: true
-                reverse: true
-                hotswap: true
-            diode:
-              type: diode
-              nets:
-                from: =colrow
-                to: =row_net
-              anchor:
-                shift: [0, -5]
+              keycaps: true
+              reverse: true
+              hotswap: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0, -5]
           
   zones:
     matrix:
@@ -87,8 +87,8 @@ points:
                 column_net: P16
                 row_net: P8
           spread: 21.25
-          rotate: -18
-          origin: [-20, -2]
+          rotate: -20
+          origin: [-11, -2]
         far:
           spread: 21.25
           rotate: -15
@@ -110,7 +110,7 @@ outlines:
       - type: polygon
         points:
           - ref: matrix_outer_num
-            shift: [-15,20]
+            shift: [-13,20]
           - ref: matrix_outer_num
             shift: [132,20]
           - ref: thumbfan_home_top
@@ -120,13 +120,13 @@ outlines:
           - ref: thumbfan_far_home
             shift: [10,-10]
           - ref: thumbfan_near2_home
-            shift: [10,-15]
+            shift: [8,-12]
           - ref: thumbfan_near1_home
-            shift: [-10,-15]
+            shift: [-11,-12]
           - ref: thumbfan_near1_home
-            shift: [-10,3]
+            shift: [-11,4.5]
           - ref: matrix_outer_bottom
-            shift: [-15,-15]
+            shift: [-13,-14]
         
     keycap_outlines:
       - type: keys
@@ -152,15 +152,15 @@ pcbs:
   chocboard:
     outlines:
       board:
-        outline: cutout
+        outline: patch_outer
       keycaps:
-        outline: preview
+        outline: keycap_outlines
         layer: Eco1.User
     footprints:
       promicro:
         type: promicro_pretty
         anchor:
-          ref: board_pinkie_home
+          ref: matrix_inner_num
           shift: [-17, -29.5]
           rotate: 50
       pcm12:
