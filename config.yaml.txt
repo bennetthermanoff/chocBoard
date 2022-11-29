@@ -69,7 +69,7 @@ points:
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
-        shift: [-20, -20]
+        shift: [-20, -25]
       columns:
         near1:
           key:
@@ -88,7 +88,7 @@ points:
                 row_net: P8
           spread: 21.25
           rotate: -20
-          origin: [-11, -2]
+          origin: [-11, -1]
         far:
           spread: 21.25
           rotate: -15
@@ -120,11 +120,11 @@ outlines:
           - ref: thumbfan_far_home
             shift: [10,-10]
           - ref: thumbfan_near2_home
-            shift: [8,-12]
+            shift: [9,-12]
           - ref: thumbfan_near1_home
             shift: [-11,-12]
           - ref: thumbfan_near1_home
-            shift: [-11,4.5]
+            shift: [-11,8.5]
           - ref: matrix_outer_bottom
             shift: [-13,-14]
         
