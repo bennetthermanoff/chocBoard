@@ -1,0 +1,204 @@
+points:
+   key:
+      padding: cy
+      tags: 
+        1u: true
+      footprints:
+          choc_hotswap:
+            type: choc
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+                hotswap: true
+          choc:
+            type: choc
+            anchor:
+              rotate: 180
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+   zones:
+    board:
+      rows:
+        home:
+        top:
+      columns:
+          pinkie:
+            rotate: 40
+            row_overrides: 
+             home:
+               bind: [0,5,2,5]
+               column_net: P10
+               tags: 
+                15u: true
+                1u: false
+               rotate: 90
+          ring:
+            spread: cx+0.5
+            stagger: 12
+            rotate: -5
+            rows: 
+              home: 
+                bind: [0,0,3,1]
+                column_net: P9
+              top: 
+                bind: [0,0,0,1]
+                column_net: P8
+          middle: 
+            spread: cx+0.5
+            stagger: -5
+            rotate: -5
+            rows:
+              home: 
+                bind: [5,0,3,5]
+                column_net: P15
+              top:
+                column_net: P14
+                bind: [0,1,0,5]
+          index: 
+            spread: cx
+            stagger: -10
+            rotate: -5
+            rows: 
+              home: 
+                bind: [0,1,3,0]
+                column_net: P4
+              top: 
+                bind: [0,1,3,3]
+                column_net: P5
+    thumbfan:
+      anchor:
+        ref: board_index_home
+        shift: [20, -18]
+      rows:
+        home:
+      columns:
+        home:
+          rotate: -5
+          rows:
+            home:
+              column_net: P0
+              tags: 
+                1u: false
+                15u: true
+              rotate: 90
+        far:
+          spread: 17
+          stagger: -5
+          rotate: -0
+          rows:
+            home:
+              column_net: P1
+              tags: 
+                1u: false
+                15u: true
+              rotate: 90
+outlines:
+  exports:
+    raw: 
+      - type: keys
+        side: left
+        size: [1cx - 0.5 , 1cx -0.5]
+      - type: rectangle
+        size: [96.5, 40]
+        anchor:
+          ref: board_index_home
+          rotate: -25
+          shift: [-49.5, -12]
+    cutout:
+      - type: outline
+        name: raw
+        fillet: 2
+    keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false    
+        tags: [1u]       
+    keycap_outlines15:
+      - type: keys
+        side: left
+        size: [1.5cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false    
+        tags: [15u]       
+    preview:
+        [keycap_outlines,keycap_outlines15]
+pcbs:
+  piano:
+    outlines:
+      board:
+        outline: cutout
+      keycaps:
+        outline: preview
+        layer: Eco1.User
+    footprints:
+      promicro:
+        type: promicro_pretty
+        anchor:
+          ref: board_pinkie_home
+          shift: [-17, -29.5]
+          rotate: 50
+      pcm12:
+        type: pcm12
+        anchor:
+          ref: thumbfan_home_home
+          shift: [-28, -13.5]
+          rotate: -110
+        nets:
+          from: pos  
+          to: RAW
+        params:
+          reverse: true 
+      via3:
+        type: via
+        anchor: 
+          ref: thumbfan_home_home
+          shift: [3,10]
+        nets: 
+          net: RAW 
+      via4:
+        type: via
+        anchor: 
+          ref: thumbfan_home_home
+          shift: [-3,10]
+        nets: 
+          net: pos 
+      via5:
+        type: via
+        anchor: 
+          ref: thumbfan_home_home
+          shift: [3,20]
+        nets: 
+          net: GND 
+      via6:
+        type: via
+        anchor: 
+          ref: thumbfan_home_home
+          shift: [-3,20]
+        nets: 
+          net: RST 
+      b3u1000p:
+        type: b3u1000p
+        nets:
+          r1: RST  
+          r2: GND
+        anchor:
+          ref: thumbfan_home_home
+          shift: [-14, 23]
+          rotate: -110
+        params:
+          reverse: true 
+      bat:
+        type: bat
+        nets: 
+          neg: GND
+        anchor:
+          ref: thumbfan_home_home
+          shift: [12.5, 57]
+          rotate: -20
