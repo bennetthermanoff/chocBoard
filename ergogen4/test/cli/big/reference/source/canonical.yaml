@@ -1,0 +1,28 @@
+units:
+    a: 28 + u
+points:
+    zones:
+        matrix: null
+outlines:
+    export:
+        -
+            what: rectangle
+            where: true
+            size: 18
+    _export:
+        -
+            what: rectangle
+            where: true
+            size: 18
+cases:
+    export:
+        -
+            name: export
+            extrude: 1
+    _export:
+        -
+            name: export
+            extrude: 1
+pcbs:
+    export: {}
+    _export: {}

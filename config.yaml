@@ -1,3 +1,4 @@
+#https://github.com/tsteffek/Ergogen-V4-Migration-Guide
 units:
   kx: cx
   ky: cy
@@ -135,7 +136,7 @@ pcbs:
   top_plate:
     outlines:
       edge:
-        outline: preview # needs to change to be cuts not keycaps
+        outline: preview 
         layer: Edge.Cuts
   board:
     outlines:
@@ -144,24 +145,21 @@ pcbs:
         layer: Edge.Cuts
     footprints:
       choc_hotswap:
-            where: true
-            what: choc
-            nets:
-              # from: P1
-              # to: P2
-              from: =colrow
-              to: =column_net
-            params:
-              keycaps: true
-              reverse: true
-              hotswap: true
-            diode:
-              what: diode
-              nets:
-                from: =colrow
-                to: =row_net
-              adjust:
-                shift: [0, -5]
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{colrow}}"
+          to: "{{column_net}}"
+      diode:
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
       mcu_l:
         what: promicro_pretty
         params:
@@ -178,7 +176,7 @@ pcbs:
             - matrix_inner_top
           shift: [12.5, -30]
           rotate: 90
-        nets:
+        params:
           CS: P1
           SCL: P2
           SDA: P0
@@ -189,7 +187,7 @@ pcbs:
             - matrix_inner_top
           shift: [27, -30]
           rotate: 270
-        nets:
+        params:
           CS: P1
           SCL: P2
           SDA: P0
@@ -210,13 +208,12 @@ pcbs:
           shift: [32, -6]
           rotate: 0
         params:
+          net: Bplus
           front: true
           back: true
           width: 1.5
           height: 1.5
           text: "B+"
-        nets:
-          net: Bplus
       pad_minus:
         what: pad
         adjust:
@@ -230,7 +227,6 @@ pcbs:
           width: 1.5
           height: 1.5
           text: "B-"
-        nets:
           net: GND
       # trrs_l:
       #   what: trrs
@@ -273,7 +269,6 @@ pcbs:
           rotate: 270
         params:
           side: B
-        nets:
           from: Bplus
           to: RAW
       jumper_r:
@@ -285,7 +280,6 @@ pcbs:
           rotate: 270
         params:
           side: F
-        nets:
           from: Bplus
           to: RAW
       
@@ -298,7 +292,6 @@ pcbs:
           rotate: 270
         params:
           variant: 2_pin_th
-        nets:
           from: GND
           to: RST
 #      info_l:

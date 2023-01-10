@@ -1,0 +1,43 @@
+{
+    "name": "ergogen",
+    "version": "4.0.0",
+    "description": "Ergonomic keyboard layout generator",
+    "author": "Bán Dénes <mr@zealot.hu>",
+    "license": "MIT",
+    "homepage": "https://ergogen.xyz",
+    "repository": "github:ergogen/ergogen",
+    "bugs": "https://github.com/ergogen/ergogen/issues",
+    "main": "./src/ergogen.js",
+    "bin": "./src/cli.js",
+    "scripts": {
+        "build": "rollup -c",
+        "test": "mocha -r test/helpers/register test/index.js",
+        "coverage": "nyc --reporter=html --reporter=text npm test"
+    },
+    "dependencies": {
+        "fs-extra": "^10.0.1",
+        "js-yaml": "^3.14.1",
+        "jszip": "^3.10.1",
+        "kle-serial": "github:ergogen/kle-serial#ergogen",
+        "makerjs": "github:ergogen/maker.js#ergogen",
+        "mathjs": "^10.1.1",
+        "yargs": "^17.3.1"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^21.0.2",
+        "@rollup/plugin-json": "^4.1.0",
+        "chai": "^4.3.6",
+        "chai-as-promised": "^7.1.1",
+        "dir-compare": "^4.0.0",
+        "glob": "^7.2.0",
+        "mocha": "^9.2.1",
+        "nyc": "^15.1.0",
+        "rollup": "^2.68.0"
+    },
+    "nyc": {
+        "all": true,
+        "include": [
+            "src/**/*.js"
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+points.zones.matrix:
+  mirror: 10
+outlines:
+  edge:
+    - what: rectangle
+      where: true
+      size: u
+pcbs:
+  main:
+    outlines:
+      edge:
+        outline: edge
+    footprints:
+      trace:
+        what: trace_test
+        where: true
+        adjust:
+          shift: [1, 1]
+          rotate: 30
+        params:
+          side: F
+          mirror:
+            side: B
+      zone:
+        what: zone_test
+        where:
+          shift: [1, 1]
+          rotate: 30
+      dyn:
+        what: dynamic_net_test
+      anc:
+        what: anchor_test
+        params:
+          end:
+            ref: matrix
+            shift: [10, 10]

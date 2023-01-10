@@ -1,0 +1,324 @@
+{
+    "matrix_left_bottom": {
+        "x": 0,
+        "y": 0,
+        "r": 0,
+        "meta": {
+            "stagger": 0,
+            "spread": 19,
+            "splay": 0,
+            "origin": [
+                0,
+                0
+            ],
+            "orient": 0,
+            "shift": [
+                0,
+                0
+            ],
+            "rotate": 0,
+            "width": 18,
+            "height": 18,
+            "padding": 19,
+            "autobind": 10,
+            "skip": false,
+            "asym": "both",
+            "colrow": "left_bottom",
+            "name": "matrix_left_bottom",
+            "zone": {
+                "columns": {
+                    "left": null,
+                    "right": {
+                        "key": {
+                            "stagger": 5,
+                            "spread": 25,
+                            "splay": 5,
+                            "origin": [
+                                -9,
+                                -9
+                            ]
+                        },
+                        "rows": {
+                            "top": {
+                                "orient": -90,
+                                "shift": [
+                                    0,
+                                    10
+                                ],
+                                "rotate": 90
+                            }
+                        },
+                        "name": "right"
+                    }
+                },
+                "rows": {
+                    "bottom": {},
+                    "top": {}
+                },
+                "name": "matrix"
+            },
+            "col": {
+                "rows": {},
+                "key": {},
+                "name": "left"
+            },
+            "row": "bottom",
+            "bind": [
+                10,
+                0,
+                0,
+                0
+            ]
+        }
+    },
+    "matrix_left_top": {
+        "x": 0,
+        "y": 19,
+        "r": 0,
+        "meta": {
+            "stagger": 0,
+            "spread": 19,
+            "splay": 0,
+            "origin": [
+                0,
+                0
+            ],
+            "orient": 0,
+            "shift": [
+                0,
+                0
+            ],
+            "rotate": 0,
+            "width": 18,
+            "height": 18,
+            "padding": 19,
+            "autobind": 10,
+            "skip": false,
+            "asym": "both",
+            "colrow": "left_top",
+            "name": "matrix_left_top",
+            "zone": {
+                "columns": {
+                    "left": null,
+                    "right": {
+                        "key": {
+                            "stagger": 5,
+                            "spread": 25,
+                            "splay": 5,
+                            "origin": [
+                                -9,
+                                -9
+                            ]
+                        },
+                        "rows": {
+                            "top": {
+                                "orient": -90,
+                                "shift": [
+                                    0,
+                                    10
+                                ],
+                                "rotate": 90
+                            }
+                        },
+                        "name": "right"
+                    }
+                },
+                "rows": {
+                    "bottom": {},
+                    "top": {}
+                },
+                "name": "matrix"
+            },
+            "col": {
+                "rows": {},
+                "key": {},
+                "name": "left"
+            },
+            "row": "top",
+            "bind": [
+                0,
+                10,
+                10,
+                0
+            ]
+        }
+    },
+    "matrix_right_bottom": {
+        "x": 24.181350600000002,
+        "y": 5.750154,
+        "r": 5,
+        "meta": {
+            "stagger": 5,
+            "spread": 25,
+            "splay": 5,
+            "origin": [
+                -9,
+                -9
+            ],
+            "orient": 0,
+            "shift": [
+                0,
+                0
+            ],
+            "rotate": 0,
+            "width": 18,
+            "height": 18,
+            "padding": 19,
+            "autobind": 10,
+            "skip": false,
+            "asym": "both",
+            "colrow": "right_bottom",
+            "name": "matrix_right_bottom",
+            "zone": {
+                "columns": {
+                    "left": null,
+                    "right": {
+                        "key": {
+                            "stagger": 5,
+                            "spread": 25,
+                            "splay": 5,
+                            "origin": [
+                                -9,
+                                -9
+                            ]
+                        },
+                        "rows": {
+                            "top": {
+                                "orient": -90,
+                                "shift": [
+                                    0,
+                                    10
+                                ],
+                                "rotate": 90
+                            }
+                        },
+                        "name": "right"
+                    }
+                },
+                "rows": {
+                    "bottom": {},
+                    "top": {}
+                },
+                "name": "matrix"
+            },
+            "col": {
+                "key": {
+                    "stagger": 5,
+                    "spread": 25,
+                    "splay": 5,
+                    "origin": [
+                        -9,
+                        -9
+                    ]
+                },
+                "rows": {
+                    "top": {
+                        "orient": -90,
+                        "shift": [
+                            0,
+                            10
+                        ],
+                        "rotate": 90
+                    }
+                },
+                "name": "right"
+            },
+            "row": "bottom",
+            "bind": [
+                10,
+                0,
+                0,
+                10
+            ]
+        }
+    },
+    "matrix_right_top": {
+        "x": 32.4873385,
+        "y": 25.549410700000003,
+        "r": 5,
+        "meta": {
+            "stagger": 5,
+            "spread": 25,
+            "splay": 5,
+            "origin": [
+                -9,
+                -9
+            ],
+            "orient": -90,
+            "shift": [
+                0,
+                10
+            ],
+            "rotate": 90,
+            "width": 18,
+            "height": 18,
+            "padding": 19,
+            "autobind": 10,
+            "skip": false,
+            "asym": "both",
+            "colrow": "right_top",
+            "name": "matrix_right_top",
+            "zone": {
+                "columns": {
+                    "left": null,
+                    "right": {
+                        "key": {
+                            "stagger": 5,
+                            "spread": 25,
+                            "splay": 5,
+                            "origin": [
+                                -9,
+                                -9
+                            ]
+                        },
+                        "rows": {
+                            "top": {
+                                "orient": -90,
+                                "shift": [
+                                    0,
+                                    10
+                                ],
+                                "rotate": 90
+                            }
+                        },
+                        "name": "right"
+                    }
+                },
+                "rows": {
+                    "bottom": {},
+                    "top": {}
+                },
+                "name": "matrix"
+            },
+            "col": {
+                "key": {
+                    "stagger": 5,
+                    "spread": 25,
+                    "splay": 5,
+                    "origin": [
+                        -9,
+                        -9
+                    ]
+                },
+                "rows": {
+                    "top": {
+                        "orient": -90,
+                        "shift": [
+                            0,
+                            10
+                        ],
+                        "rotate": 90
+                    }
+                },
+                "name": "right"
+            },
+            "row": "top",
+            "bind": [
+                0,
+                0,
+                10,
+                0
+            ]
+        }
+    }
+}
