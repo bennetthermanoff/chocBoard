@@ -8,25 +8,7 @@ points:
     padding: cy
     tags:
       1u: true
-    footprints:
-          choc_hotswap:
-            type: choc
-            nets:
-              # from: P1
-              # to: P2
-              from: =colrow
-              to: =column_net
-            params:
-              keycaps: true
-              reverse: true
-              hotswap: true
-          diode:
-            type: diode
-            nets:
-              from: =colrow
-              to: =row_net
-            anchor:
-              shift: [0, -5]
+    
           
   zones:
     matrix:
@@ -34,26 +16,26 @@ points:
         rotate: 5
       columns:
         outer:
-          key:
-            column_net: P20
+            key:
+              column_net: P20
         pinky:
           key:
             column_net: P19
         ring:
-          stagger: 5
           key:
+            stagger: 5
             column_net: P18
         middle:
-          stagger: 5
           key:
+            stagger: 5
             column_net: P15
         index:
-          stagger: -6
           key:
+            stagger: -6
             column_net: P14
         inner:
-          stagger: -2
           key:
+            stagger: -2
             column_net: P16
       rows:
         bottom:
@@ -82,30 +64,31 @@ points:
             top:
               column_net: P15
               row_net: P3
-          spread: 21.25
-          rotate: -20
-          origin: [-28, -2]
+          key:
+            spread: 21.25
+            splay: -20
+            origin: [-28, -2]
         far:
           key:
             column_net: P14
-          spread: 21.25
-          rotate: -15
-          origin: [-11, -2]
+            spread: 21.25
+            splay: -15
+            origin: [-11, -2]
       rows:
         home:
           row_net: P3
       
   rotate: -20
 outlines:
-  exports:
     raw: 
-      - type: keys
-        side: left
+      - what: rectangle
+        #side: left
         size: [kx + px, ky + py]
         corner: px
+        where: true
         
     patch_outer:
-      - type: polygon
+      - what: polygon
         points:
           - ref: matrix_outer_num
             shift: [-13,20]
@@ -127,23 +110,25 @@ outlines:
             shift: [-13,-14]
         
     keycap_outlines:
-      - type: keys
-        side: left
+      - what: rectangle
+        #side: left
         size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
         bound: false    
-        tags: [1u]       
+        #tags: [1u]       
+        where: true
     keycap_outlines15:
-      - type: keys
-        side: left
+      - what: rectangle
+        #side: left
         size: [1.5cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
         bound: false    
-        tags: [15u]       
+        #tags: [15u]     
+        where: true  
     preview:
         main:
-          type: outline
+          what: outline
           name: patch_outer
         switches:
-          type: outline
+          what: outline
           name: keycap_outlines
           operation: subtract
 pcbs:
@@ -158,41 +143,71 @@ pcbs:
         outline: patch_outer
         layer: Edge.Cuts
     footprints:
+      choc_hotswap:
+            where: true
+            what: choc
+            nets:
+              # from: P1
+              # to: P2
+              from: =colrow
+              to: =column_net
+            params:
+              keycaps: true
+              reverse: true
+              hotswap: true
+            diode:
+              what: diode
+              nets:
+                from: =colrow
+                to: =row_net
+              adjust:
+                shift: [0, -5]
       mcu_l:
-        type: promicro_pretty
+        what: promicro_pretty
         params:
           orientation: up
-        anchor:
+        adjust:
           ref:
             - matrix_inner_top
           shift: [20, -11]
           rotate: 270
-      oled:
-        type: oled
-        anchor:
+      oled_l:
+        what: oled
+        adjust:
           ref:
             - matrix_inner_top
-          shift: [15, -30]
+          shift: [12.5, -30]
           rotate: 90
         nets:
           CS: P1
           SCL: P2
           SDA: P0
+      oled_r:
+        what: oled
+        adjust:
+          ref:
+            - matrix_inner_top
+          shift: [27, -30]
+          rotate: 270
+        nets:
+          CS: P1
+          SCL: P2
+          SDA: P0
       #mcu_r:
-      #  type: promicro
+      #  what: promicro
       #  params:
       #    orientation: down
-      #  anchor:
+      #  adjust:
       #    ref:
       #      - matrix_inner_top
       #    shift: [22.5, -12.25]
       #    rotate: 270
       pad_plus:
-        type: pad
-        anchor:
+        what: pad
+        adjust:
           ref:
             - matrix_inner_top
-          shift: [23, -6]
+          shift: [32, -6]
           rotate: 0
         params:
           front: true
@@ -203,11 +218,11 @@ pcbs:
         nets:
           net: Bplus
       pad_minus:
-        type: pad
-        anchor:
+        what: pad
+        adjust:
           ref:
             - matrix_inner_top
-          shift: [23, -3]
+          shift: [32, -3]
           rotate: 0
         params:
           front: true
@@ -218,8 +233,8 @@ pcbs:
         nets:
           net: GND
       # trrs_l:
-      #   type: trrs
-      #   anchor:
+      #   what: trrs
+      #   adjust:
       #     ref:
       #       - matrix_inner_bottom
       #     shift: [32, -15]
@@ -234,8 +249,8 @@ pcbs:
       #     C: GND
       #     D: P0
       # trrs_r:
-      #   type: trrs
-      #   anchor:
+      #   what: trrs
+      #   adjust:
       #     ref:
       #       - matrix_inner_bottom
       #     shift: [32, -13]
@@ -250,8 +265,8 @@ pcbs:
       #     C: GND
       #     D: P0
       jumper_l:
-        type: jumper
-        anchor:
+        what: jumper
+        adjust:
           ref:
             - matrix_inner_bottom
           shift: [23.5, 0]
@@ -262,8 +277,8 @@ pcbs:
           from: Bplus
           to: RAW
       jumper_r:
-        type: jumper
-        anchor:
+        what: jumper
+        adjust:
           ref:
             - matrix_inner_bottom
           shift: [23.5, 0]
@@ -275,8 +290,8 @@ pcbs:
           to: RAW
       
       reset:
-        type: button
-        anchor:
+        what: button
+        adjust:
           ref:
             - matrix_inner_bottom
           shift: [17, 0]
@@ -287,8 +302,8 @@ pcbs:
           from: GND
           to: RST
 #      info_l:
- #       type: text
-  #      anchor:
+ #       what: text
+  #      adjust:
    #       ref:
     #        - matrix_pinky_bottom
      #     shift: [0.75 kx, 0]
@@ -296,8 +311,8 @@ pcbs:
        #   text: "chocBoard"
      #     justify: left
      # info_r:
-      #  type: text
-       # anchor:
+      #  what: text
+       # adjust:
         #  ref:
          #   - matrix_pinky_bottom
         #  shift: [0.75 kx, 0]

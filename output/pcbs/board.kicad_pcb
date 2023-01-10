@@ -4419,7 +4419,7 @@
   
 
         (module lib:OLED_headers (layer F.Cu) (tedit 5E1ADAC2)
-        (at 107.80475510000001 22.67454 75) 
+        (at 105.3899406 22.0274924 75) 
 
                 
         (fp_text reference "OLED1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4439,10 +4439,31 @@
         )
         
 
+        (module lib:OLED_headers (layer F.Cu) (tedit 5E1ADAC2)
+        (at 119.39586510000001 25.780368499999994 255) 
+
+                
+        (fp_text reference "OLED2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value OLED (at 0 -7.3) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
+
+        
+        (pad 4 thru_hole oval (at 1.6 2.18 525) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
+        (net 48 "P0"))
+        (pad 3 thru_hole oval (at 1.6 4.72 525) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
+        (net 49 "P2"))
+        (pad 2 thru_hole oval (at 1.6 7.26 525) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
+        (net 44 "VCC"))
+        (pad 1 thru_hole rect (at 1.6 9.8 525) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
+        (net 42 "GND"))
+        (pad 0 thru_hole oval (at 1.6 12.34 525) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
+        (net 47 "P1"))
+        )
+        
+
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 121.74381880000001 1.5628724999999992 -15)
+            (at 130.4371513 3.8922438999999986 -15)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4461,7 +4482,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 122.52027600000001 -1.334905000000001 -15)
+            (at 131.2136084 0.9944663999999985 -15)
 
             
             (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
