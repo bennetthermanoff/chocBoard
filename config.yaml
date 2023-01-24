@@ -88,27 +88,59 @@ outlines:
         corner: px
         where: true
         
+        
     patch_outer:
       - what: polygon
+        fillet: 6.35
         points:
           - ref: matrix_outer_num
-            shift: [-13,20]
+            shift: [-14,20]
           - ref: matrix_outer_num
-            shift: [132,20]
+            shift: [133,20]
           - ref: thumbfan_home_top
-            shift: [10,10]
+            shift: [10,12]
           - ref: thumbfan_far_home
-            shift: [10,20]
+            shift: [12,20]
           - ref: thumbfan_far_home
-            shift: [10,-10]
+            shift: [12.5,-11]
           - ref: thumbfan_near2_home
             shift: [7,-16]
           - ref: thumbfan_near1_home
-            shift: [-11,-12]
+            shift: [-13,-13]
           - ref: thumbfan_near1_home
-            shift: [-11,4.5]
+            shift: [-13.5,3.5]
           - ref: matrix_outer_bottom
-            shift: [-13,-14]
+            shift: [-14,-15]
+
+    screw_holes:
+      - what: circle
+        adjust:
+            ref: matrix_outer_num
+            shift: [-0.4 cx, .85 cy]
+        radius: 1.05
+      - what: circle
+        adjust:
+            ref: matrix_inner_num
+            shift: [1.75 cx, 0.75 cy]
+        radius: 1.05
+      - what: circle
+        adjust:
+            ref: matrix_outer_bottom
+            shift: [-.55 cx, -.635 cy]
+        radius: 1.05
+      - what: circle
+        adjust:
+            ref: matrix_middle_bottom
+            shift: [.2 cx, -1.2 cy]
+        radius: 1.05
+      - what: circle
+        adjust:
+            ref: thumbfan_far_home
+            shift: [.4 cx, .96 cy]
+        radius: 1.05
+      
+        
+    
         
     keycap_outlines:
       - what: rectangle
@@ -132,6 +164,18 @@ outlines:
           what: outline
           name: keycap_outlines
           operation: subtract
+        holes:
+          what: outline
+          name: screw_holes
+          operation: subtract
+    pcb:
+        main:
+          what: outline
+          name: patch_outer
+        holes:
+          what: outline
+          name: screw_holes
+          operation: subtract
 pcbs:
   top_plate:
     outlines:
@@ -141,7 +185,7 @@ pcbs:
   board:
     outlines:
       edge:
-        outline: patch_outer
+        outline: pcb
         layer: Edge.Cuts
     footprints:
       choc_hotswap:
