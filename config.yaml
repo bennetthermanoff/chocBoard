@@ -217,7 +217,7 @@ pcbs:
         adjust:
           ref:
             - matrix_inner_top
-          shift: [22, -11+1.5*cy]
+          shift: [22, -9+1.5*cy]
           rotate: 270
       oled_l:
         what: oled
