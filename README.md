@@ -6,3 +6,8 @@ PCB, ergogen, kicad files for chocBoard wireless split ergo keyboard
 This repo contains the files to order a custom PCB for chocBoard, checkout my [zmk fork](https://github.com/xpsKING/zmk) to build firmware!
 
 Read more about chocBoard on my [website](https://hermanoff.dev)
+
+## LICENSE
+This repo is attached with Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons License, learn what his means [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+
